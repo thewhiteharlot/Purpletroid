@@ -45,17 +45,17 @@ else:
 
 _main_help_menu = [
     [
-        Button.inline("• Plugins", data="hrrrr"),
-        Button.inline("• Addons", data="frrr"),
+        Button.inline("🗂 Plugins", data="hrrrr"),
+        Button.inline("🗃 Addons", data="frrr"),
     ],
     [
-        Button.inline("Owner•Tools", data="ownr"),
-        Button.inline("Inline•Plugins", data="inlone"),
+        Button.inline("👤 Owner Tools", data="ownr"),
+        Button.inline("🔍 Inline Plugins", data="inlone"),
     ],
     [
-        Button.url("⚙️Settings⚙️", url=f"https://t.me/{asst.me.username}?start=set"),
+        Button.url("🔧 SETTINGS", url=f"https://t.me/{asst.me.username}?start=set"),
     ],
-    [Button.inline("••Close••", data="close")],
+    [Button.inline("Close", data="close")],
 ]
 
 SUP_BUTTONS = [
@@ -158,14 +158,14 @@ async def setting(event):
         link_preview=False,
         buttons=[
             [
-                Button.inline("•Pɪɴɢ•", data="pkng"),
-                Button.inline("•Uᴘᴛɪᴍᴇ•", data="upp"),
+                Button.inline("📶 Ping", data="pkng"),
+                Button.inline("⏺ Uptime", data="upp"),
             ],
             [
-                Button.inline("•Rᴇsᴛᴀʀᴛ•", data="rstrt"),
-                Button.inline("•Uᴘᴅᴀᴛᴇ•", data="doupdate"),
+                Button.inline("🔄 Restart", data="rstrt"),
+                Button.inline("🔂 Update", data="doupdate"),
             ],
-            [Button.inline("« Bᴀᴄᴋ", data="open")],
+            [Button.inline("« Back", data="open")],
         ],
     )
 
@@ -192,7 +192,7 @@ async def _(event):
             file="ultroid_updates.txt",
             buttons=[
                 [Button.inline("• Uᴘᴅᴀᴛᴇ Nᴏᴡ •", data="updatenow")],
-                [Button.inline("« Bᴀᴄᴋ", data="ownr")],
+                [Button.inline("« Back", data="ownr")],
             ],
         )
         remove(f"ultroid_updates.txt")
@@ -202,7 +202,7 @@ async def _(event):
             changelog_str,
             buttons=[
                 [Button.inline("Update Now", data="updatenow")],
-                [Button.inline("« Bᴀᴄᴋ", data="ownr")],
+                [Button.inline("« Back", data="ownr")],
             ],
             parse_mode="html",
         )
@@ -213,14 +213,14 @@ async def _(event):
     start = datetime.now()
     end = datetime.now()
     ms = (end - start).microseconds
-    pin = f"🌋Ping = {ms} microseconds"
+    pin = f"📊 Ping = {ms} microseconds"
     await event.answer(pin, cache_time=0, alert=True)
 
 
 @callback("upp")
 async def _(event):
     uptime = time_formatter((time.time() - start_time) * 1000)
-    pin = f"🙋Uptime = {uptime}"
+    pin = f"⌛️ Uptime = {uptime}"
     await event.answer(pin, cache_time=0, alert=True)
 
 
@@ -442,13 +442,13 @@ async def on_plug_in_callback_query_handler(event):
     buttons = [
         [
             Button.inline(
-                "« Send Plugin »",
+                "Send Plugin ⏏️",
                 data=f"sndplug_{(event.data).decode('UTF-8')}",
             )
         ],
         [
             Button.inline("« Back", data="back"),
-            Button.inline("••Close••", data="close"),
+            Button.inline("Close", data="close"),
         ],
     ]
     try:
@@ -507,7 +507,7 @@ async def on_plug_in_callback_query_handler(event):
         ],
         [
             Button.inline("« Back", data="buck"),
-            Button.inline("••Close••", data="close"),
+            Button.inline("Close", data="close"),
         ],
     ]
     try:

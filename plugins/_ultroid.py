@@ -10,8 +10,8 @@ from telethon.errors.rpcerrorlist import BotMethodInvalidError as bmi
 from . import *
 
 REPOMSG = """
-• **ULTROID USERBOT** •\n
-• Repo - [Click Here](https://github.com/TeamUltroid/Ultroid)
+• **VIOLET USERBOT** •\n
+• Repo - [Click Here](https://github.com/thewhiteharlot/Ultroid)
 • Addons - [Click Here](https://github.com/TeamUltroid/UltroidAddons)
 • Support - @UltroidSupport
 """

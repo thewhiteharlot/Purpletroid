@@ -31,9 +31,9 @@ from . import *
 bot = "@MissRose_bot"
 
 
-@ultroid_cmd(pattern="superfban ?(.*)", ignore_dualmode=True)
+@ultroid_cmd(pattern="sfban ?(.*)", ignore_dualmode=True)
 async def _(event):
-    msg = await eor(event, "Starting a Mass-FedBan...")
+    msg = await eor(event, "FBanning...")
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         if previous_message.media:
@@ -57,15 +57,15 @@ async def _(event):
                     FBAN = arg[1]
                 except IndexError:
                     return await msg.edit("No user was designated.")
-                REASON = "#TBMassBanned "
+                REASON = ""
         else:
             FBAN = previous_message.sender_id
             try:
                 REASON = event.text.split(" ", maxsplit=1)[1]
             except IndexError:
-                REASON = "#TBMassBanned"
+                REASON = ""
     else:
-        REASON = "#TBMassBanned"
+        REASON = ""
         arg = event.text.split()
         if len(arg) == 2:
             FBAN = arg[1]
@@ -182,13 +182,13 @@ async def _(event):
     except Exception as e:
         print(f"Error in removing FedAdmin file.\n{str(e)}")
     await msg.edit(
-        f"SuperFBan Completed.\nTotal Feds - {len(fedList)}.\nExcluded - {exCount}.\nAffected {len(fedList) - exCount} feds.\n#TB",
+        f"FBanned.\nTotal Feds - {len(fedList)}.\nExcluded - {exCount}.\nAffected {len(fedList) - exCount} feds.\n",
     )
 
 
-@ultroid_cmd(pattern="superunfban ?(.*)", ignore_dualmode=True)
+@ultroid_cmd(pattern="sunfban ?(.*)", ignore_dualmode=True)
 async def _(event):
-    msg = await eor(event, "Starting a Mass-UnFedBan...")
+    msg = await eor(event, "UnFBanning...")
     fedList = []
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
@@ -230,7 +230,7 @@ async def _(event):
         else:
             try:
                 FBAN = arg[1]
-                REASON = " #TBMassUnBanned "
+                REASON = ""
             except BaseException:
                 return await msg.edit("`No user designated!`")
     if udB.get("FBAN_GROUP_ID"):
@@ -297,7 +297,7 @@ async def _(event):
         if len(fedList) == 0:
             await msg.edit("Unable to collect FedAdminList.")
             return
-    await msg.edit(f"UnFBaning in {len(fedList)} feds.")
+    await msg.edit(f"UnFBanning in {len(fedList)} feds.")
     try:
         await event.client.send_message(chat, f"/start")
     except BaseException:
@@ -323,7 +323,7 @@ async def _(event):
     except Exception as e:
         print(f"Error in removing FedAdmin file.\n{str(e)}")
     await msg.edit(
-        f"SuperUnFBan Completed.\nTotal Feds - {len(fedList)}.\nExcluded - {exCount}.\n Affected {len(fedList) - exCount} feds.\n#TB",
+        f"UnFBanned.\nTotal Feds - {len(fedList)}.\nExcluded - {exCount}.\n Affected {len(fedList) - exCount} feds.\n",
     )
 
 
@@ -362,7 +362,7 @@ async def _(event):
                     await event.client.send_file(
                         event.chat_id,
                         audio,
-                        caption=f"List of feds {user} has been banned in.\n\nCollected using Ultroid.",
+                        caption=f"List of feds {user} has been banned in.",
                         link_preview=False,
                     )
                     await ok.delete()
@@ -385,6 +385,6 @@ async def _(event):
             await conv.send_message("/fedinfo " + sysarg)
             audio = await conv.get_response()
             await ultroid.send_read_acknowledge(bot)
-            await ok.edit(audio.text + "\n\nFedInfo Extracted by Ultroid")
+            await ok.edit(audio.text + "")
         except YouBlockedUserError:
             await ok.edit("**Error**\n `Unblock` @MissRose_Bot `and try again!")

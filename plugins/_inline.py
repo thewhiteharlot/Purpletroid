@@ -45,17 +45,17 @@ else:
 
 _main_help_menu = [
     [
-        Button.inline("• Pʟᴜɢɪɴs", data="hrrrr"),
-        Button.inline("• Aᴅᴅᴏɴs", data="frrr"),
+        Button.inline("• Plugins", data="hrrrr"),
+        Button.inline("• Addons", data="frrr"),
     ],
     [
-        Button.inline("Oᴡɴᴇʀ•ᴛᴏᴏʟꜱ", data="ownr"),
-        Button.inline("Iɴʟɪɴᴇ•Pʟᴜɢɪɴs", data="inlone"),
+        Button.inline("Owner•Tools", data="ownr"),
+        Button.inline("Inline•Plugins", data="inlone"),
     ],
     [
-        Button.url("⚙️Sᴇᴛᴛɪɴɢs⚙️", url=f"https://t.me/{asst.me.username}?start=set"),
+        Button.url("⚙️Settings⚙️", url=f"https://t.me/{asst.me.username}?start=set"),
     ],
-    [Button.inline("••Cʟᴏꜱᴇ••", data="close")],
+    [Button.inline("••Close••", data="close")],
 ]
 
 SUP_BUTTONS = [
@@ -90,14 +90,14 @@ async def inline_alive(o):
                     media=True,
                     buttons=SUP_BUTTONS,
                 ),
-                title="Ultroid Userbot",
-                description="Userbot | Telethon",
+                title="Violet Userbot",
+                description="Kircheiss | Userbot",
                 url=TLINK,
                 thumb=WEB0,
                 content=InputWebDocument(TLINK, 0, "image/jpg", []),
             )
         ]
-        await o.answer(RES, switch_pm=f"👥 ULTROID PORTAL", switch_pm_param="start")
+        await o.answer(RES, switch_pm=f"👥 Violet Settings", switch_pm_param="start")
 
 
 @in_pattern("ultd")
@@ -213,14 +213,14 @@ async def _(event):
     start = datetime.now()
     end = datetime.now()
     ms = (end - start).microseconds
-    pin = f"🌋Pɪɴɢ = {ms} microseconds"
+    pin = f"🌋Ping = {ms} microseconds"
     await event.answer(pin, cache_time=0, alert=True)
 
 
 @callback("upp")
 async def _(event):
     uptime = time_formatter((time.time() - start_time) * 1000)
-    pin = f"🙋Uᴘᴛɪᴍᴇ = {uptime}"
+    pin = f"🙋Uptime = {uptime}"
     await event.answer(pin, cache_time=0, alert=True)
 
 
@@ -230,55 +230,55 @@ async def _(e):
     button = [
         [
             Button.switch_inline(
-                "Pʟᴀʏ Sᴛᴏʀᴇ Aᴘᴘs",
+                "PlayStore apps",
                 query="app telegram",
                 same_peer=True,
             ),
             Button.switch_inline(
-                "Mᴏᴅᴅᴇᴅ Aᴘᴘs",
+                "Modded apps",
                 query="mods minecraft",
                 same_peer=True,
             ),
         ],
         [
             Button.switch_inline(
-                "Sᴇᴀʀᴄʜ Oɴ Gᴏᴏɢʟᴇ",
-                query="go TeamUltroid",
+                "Search on Google",
+                query="Things that are naturally purple",
                 same_peer=True,
             ),
             Button.switch_inline(
-                "Sᴇᴀʀᴄʜ Oɴ Yᴀʜᴏᴏ",
-                query="yahoo TeamUltroid",
+                "Search on Yahho",
+                query="yahoo Violet color",
                 same_peer=True,
             ),
         ],
         [
             Button.switch_inline(
-                "WʜɪSᴘᴇʀ",
+                "Whisper",
                 query="msg username wspr Hello",
                 same_peer=True,
             ),
             Button.switch_inline(
-                "YᴏᴜTᴜʙᴇ Dᴏᴡɴʟᴏᴀᴅᴇʀ",
-                query="yt Ed Sheeran Perfect",
+                "Youtube Downloader",
+                query="yt Glass Animals Youth",
                 same_peer=True,
             ),
         ],
         [
             Button.switch_inline(
-                "EBᴏᴏᴋs Uᴘʟᴏᴀᴅᴇʀ",
-                query="ebooks India",
+                "EBooks Uploader",
+                query="ebooks Brazil",
                 same_peer=True,
             ),
             Button.switch_inline(
-                "OʀᴀɴɢᴇFᴏx🦊",
+                "OrangeFox🦊",
                 query="ofox beryllium",
                 same_peer=True,
             ),
         ],
         [
             Button.inline(
-                "« Bᴀᴄᴋ",
+                "« Back",
                 data="open",
             ),
         ],
@@ -303,7 +303,7 @@ async def addon(event):
         await event.edit(f"{halp}", buttons=buttons, link_preview=False)
     else:
         await event.answer(
-            f"• Tʏᴘᴇ `{HNDLR}setredis ADDONS True`\n Tᴏ ɢᴇᴛ ᴀᴅᴅᴏɴs ᴘʟᴜɢɪɴs",
+            f"• Type `{HNDLR}setredis ADDONS True`\n to get addons plugins",
             cache_time=0,
             alert=True,
         )
@@ -438,17 +438,17 @@ async def on_plug_in_callback_query_handler(event):
         reply_pop_up_alert = f"{plugin_name} has no detailed help..."
     else:
         reply_pop_up_alert = help_string
-    reply_pop_up_alert += "\n© @TeamUltroid"
+    reply_pop_up_alert += "\n© @Kircheiss"
     buttons = [
         [
             Button.inline(
-                "« Sᴇɴᴅ Pʟᴜɢɪɴ »",
+                "« Send Plugin »",
                 data=f"sndplug_{(event.data).decode('UTF-8')}",
             )
         ],
         [
-            Button.inline("« Bᴀᴄᴋ", data="back"),
-            Button.inline("••Cʟᴏꜱᴇ••", data="close"),
+            Button.inline("« Back", data="back"),
+            Button.inline("••Close••", data="close"),
         ],
     ]
     try:
@@ -497,17 +497,17 @@ async def on_plug_in_callback_query_handler(event):
         reply_pop_up_alert = f"{plugin_name} has no detailed help..."
     else:
         reply_pop_up_alert = help_string
-    reply_pop_up_alert += "\n© @TeamUltroid"
+    reply_pop_up_alert += "\n© @Kircheiss"
     buttons = [
         [
             Button.inline(
-                "« Sᴇɴᴅ Pʟᴜɢɪɴ »",
+                "« Send Plugin »",
                 data=f"sndplug_{(event.data).decode('UTF-8')}",
             )
         ],
         [
-            Button.inline("« Bᴀᴄᴋ", data="buck"),
-            Button.inline("••Cʟᴏꜱᴇ••", data="close"),
+            Button.inline("« Back", data="buck"),
+            Button.inline("••Close••", data="close"),
         ],
     ]
     try:
@@ -560,12 +560,12 @@ def page_num(page_number, loaded_plugins, prefix, type):
         ] + [
             (
                 Button.inline(
-                    "« Pʀᴇᴠɪᴏᴜs",
+                    "« Previous",
                     data=f"{prefix}_prev({modulo_page})",
                 ),
                 Button.inline("« Bᴀᴄᴋ »", data="open"),
                 Button.inline(
-                    "Nᴇxᴛ »",
+                    "Next »",
                     data=f"{prefix}_next({modulo_page})",
                 ),
             ),
@@ -573,5 +573,5 @@ def page_num(page_number, loaded_plugins, prefix, type):
     else:
         pairs = pairs[
             modulo_page * number_of_rows : number_of_rows * (modulo_page + 1)
-        ] + [(Button.inline("« Bᴀᴄᴋ »", data="open"),)]
+        ] + [(Button.inline("« Back »", data="open"),)]
     return pairs

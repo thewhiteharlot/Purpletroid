@@ -60,19 +60,19 @@ async def _help(ult):
                 ),
                 buttons=[
                     [
-                        Button.inline("• Pʟᴜɢɪɴs", data="hrrrr"),
-                        Button.inline("• Aᴅᴅᴏɴs", data="frrr"),
+                        Button.inline("🗂 Plugins", data="hrrrr"),
+                        Button.inline("🗃 Addons", data="frrr"),
                     ],
                     [
-                        Button.inline("Oᴡɴᴇʀ•ᴛᴏᴏʟꜱ", data="ownr"),
-                        Button.inline("Iɴʟɪɴᴇ•Pʟᴜɢɪɴs", data="inlone"),
+                        Button.inline("👤 Owner Tools", data="ownr"),
+                        Button.inline("🔍 Inline Plugins", data="inlone"),
                     ],
                     [
                         Button.url(
-                            "⚙️Sᴇᴛᴛɪɴɢs⚙️", url=f"https://t.me/{tgbot}?start=set"
+                            "🔧 Settings", url=f"https://t.me/{tgbot}?start=set"
                         ),
                     ],
-                    [Button.inline("••Cʟᴏꜱᴇ••", data="close")],
+                    [Button.inline("Close", data="close")],
                 ],
             )
         except rep:

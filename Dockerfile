@@ -10,7 +10,7 @@ ENV TZ=Asia/Kolkata
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # clone the repo and change workdir
-RUN git clone https://github.com/thewhiteharlot/Ultroid.git /root/TeamUltroid/
+RUN git clone https://github.com/thewhiteharlot/Purpletroid.git /root/TeamUltroid/
 WORKDIR /root/TeamUltroid/
 
 # install main requirements.

@@ -66,13 +66,13 @@ async def send(eve):
         buttons = [
             [
                 Button.inline(
-                    "« Pᴀsᴛᴇ »",
+                    "« Paste »",
                     data=f"pasta-{plugin}",
                 )
             ],
             [
-                Button.inline("« Bᴀᴄᴋ", data="back"),
-                Button.inline("••Cʟᴏꜱᴇ••", data="close"),
+                Button.inline("« Back", data="back"),
+                Button.inline("Close", data="close"),
             ],
         ]
     else:
@@ -81,13 +81,13 @@ async def send(eve):
         buttons = [
             [
                 Button.inline(
-                    "« Pᴀsᴛᴇ »",
+                    "« Paste »",
                     data=f"pasta-{plugin}",
                 )
             ],
             [
-                Button.inline("« Bᴀᴄᴋ", data="buck"),
-                Button.inline("••Cʟᴏꜱᴇ••", data="close"),
+                Button.inline("« Back", data="buck"),
+                Button.inline("Close", data="close"),
             ],
         ]
     await eve.edit(file=plugin, thumb=thumb, buttons=buttons)
@@ -165,14 +165,14 @@ async def changes(okk):
         await okk.edit(
             get_string("upd_5"),
             file="ultroid_updates.txt",
-            buttons=Button.inline("Update Now", data="updatenow"),
+            buttons=Button.inline("Update Now ⏬", data="updatenow"),
         )
         remove(f"ultroid_updates.txt")
         return
     else:
         await okk.edit(
             changelog_str,
-            buttons=Button.inline("Update Now", data="updatenow"),
+            buttons=Button.inline("Update Now ⏬", data="updatenow"),
             parse_mode="html",
         )
 
@@ -195,13 +195,13 @@ async def _(e):
         raw = "https://nekobin.com/raw/" + key
     if ok.startswith("plugins"):
         buttons = [
-            Button.inline("« Bᴀᴄᴋ", data="back"),
-            Button.inline("••Cʟᴏꜱᴇ••", data="close"),
+            Button.inline("« Back", data="back"),
+            Button.inline("Close", data="close"),
         ]
     else:
         buttons = [
-            Button.inline("« Bᴀᴄᴋ", data="buck"),
-            Button.inline("••Cʟᴏꜱᴇ••", data="close"),
+            Button.inline("« Back", data="buck"),
+            Button.inline("Close", data="close"),
         ]
     await e.edit(
         f"<strong>Pasted\n     👉<a href={link}>[Link]</a>\n     👉<a href={raw}>[Raw Link]</a></strong>",
@@ -227,7 +227,7 @@ async def _(e):
     token_file_data = f.read()
     udB.set("GDRIVE_TOKEN", token_file_data)
     await e.reply(
-        "`Success!\nYou are all set to use Google Drive with Ultroid Userbot.`",
+        "`Success!\nYou are all set to use Google Drive with Violet Userbot.`",
         buttons=Button.inline("Main Menu", data="setter"),
     )
 
@@ -299,14 +299,14 @@ async def _(e):
         "Go [here](https://console.developers.google.com/flows/enableapi?apiid=drive) and get your CLIENT ID and CLIENT SECRET",
         buttons=[
             [
-                Button.inline("Cʟɪᴇɴᴛ Iᴅ", data="clientid"),
-                Button.inline("Cʟɪᴇɴᴛ Sᴇᴄʀᴇᴛ", data="clientsec"),
+                Button.inline("Client ID", data="clientid"),
+                Button.inline("Client Secret", data="clientsec"),
             ],
             [
-                Button.inline("Fᴏʟᴅᴇʀ Iᴅ", data="folderid"),
-                Button.inline("Aᴜᴛʜᴏʀɪsᴇ", data="authorise"),
+                Button.inline("Folder ID", data="folderid"),
+                Button.inline("Authorise", data="authorise"),
             ],
-            [Button.inline("« Bᴀᴄᴋ", data="otvars")],
+            [Button.inline("« Back", data="otvars")],
         ],
         link_preview=False,
     )
@@ -319,23 +319,23 @@ async def otvaar(event):
         "Other Variables to set for @TheUltroid:",
         buttons=[
             [
-                Button.inline("Tᴀɢ Lᴏɢɢᴇʀ", data="taglog"),
-                Button.inline("SᴜᴘᴇʀFʙᴀɴ", data="sfban"),
+                Button.inline("📡 Tag Logger", data="taglog"),
+                Button.inline("🪓 FBan", data="sfban"),
             ],
             [
-                Button.inline("Sᴜᴅᴏ Mᴏᴅᴇ", data="sudo"),
-                Button.inline("Hᴀɴᴅʟᴇʀ", data="hhndlr"),
+                Button.inline("📟 Sudo Mode", data="sudo"),
+                Button.inline("⚖️ Handler", data="hhndlr"),
             ],
             [
-                Button.inline("Exᴛʀᴀ Pʟᴜɢɪɴs", data="plg"),
-                Button.inline("Aᴅᴅᴏɴs", data="eaddon"),
+                Button.inline("🛍 Extra Plugins", data="plg"),
+                Button.inline("📲 Addons", data="eaddon"),
             ],
             [
-                Button.inline("Eᴍᴏᴊɪ ɪɴ Hᴇʟᴘ", data="emoj"),
-                Button.inline("Sᴇᴛ ɢDʀɪᴠᴇ", data="gdrive"),
+                Button.inline("😃 Emoji in Help", data="emoj"),
+                Button.inline("🔩 Set GDrive", data="gdrive"),
             ],
-            [Button.inline("Inline Pic", data="inli_pic")],
-            [Button.inline("« Bᴀᴄᴋ", data="setter")],
+            [Button.inline("🖼 Inline Pic", data="inli_pic")],
+            [Button.inline("« Back", data="setter")],
         ],
     )
 
@@ -397,7 +397,7 @@ async def pluginch(event):
         else:
             await setit(event, var, themssg)
             await conv.send_message(
-                "{} changed to {}\n After Setting All Things Do Restart".format(
+                "{} changed to {}\n After setting everything, do `.restart`".format(
                     name,
                     themssg,
                 ),
@@ -450,7 +450,7 @@ async def tagloggrr(e):
         buttons=[
             [Button.inline("SET TAG LOG", data="settag")],
             [Button.inline("DELETE TAG LOG", data="deltag")],
-            [Button.inline("« Bᴀᴄᴋ", data="otvars")],
+            [Button.inline("« Back", data="otvars")],
         ],
     )
 
@@ -459,7 +459,7 @@ async def tagloggrr(e):
 @owner
 async def delfuk(e):
     udB.delete("TAG_LOG")
-    await e.answer("Done!!! TAG lOG Off")
+    await e.answer("Done!!! Tag Log Off")
 
 
 @callback("settag")
@@ -495,9 +495,9 @@ async def pmset(event):
     await event.edit(
         "ADDONS~ Extra Plugins:",
         buttons=[
-            [Button.inline("Aᴅᴅᴏɴs  Oɴ", data="edon")],
-            [Button.inline("Aᴅᴅᴏɴs  Oғғ", data="edof")],
-            [Button.inline("« Bᴀᴄᴋ", data="otvars")],
+            [Button.inline("Addons  On ✅", data="edon")],
+            [Button.inline("Addons  Off ❌", data="edof")],
+            [Button.inline("« Back", data="otvars")],
         ],
     )
 
@@ -508,7 +508,7 @@ async def eddon(event):
     var = "ADDONS"
     await setit(event, var, "True")
     await event.edit(
-        "Done! ADDONS has been turned on!!\n\n After Setting All Things Do Restart",
+        "Done! ADDONS has been turned on!!\n\nAfter setting everything, do `.restart`",
         buttons=get_back_button("eaddon"),
     )
 
@@ -519,7 +519,7 @@ async def eddof(event):
     var = "ADDONS"
     await setit(event, var, "False")
     await event.edit(
-        "Done! ADDONS has been turned off!! After Setting All Things Do Restart",
+        "Done! ADDONS has been turned off!!\n\nAfter setting everything, do `.restart`",
         buttons=get_back_button("eaddon"),
     )
 
@@ -528,11 +528,11 @@ async def eddof(event):
 @owner
 async def pmset(event):
     await event.edit(
-        f"SUDO MODE ~ Some peoples can use ur Bot which u selected. To know More use `{HNDLR}help sudo`",
+        f"SUDO MODE ~ This will allow sudo users to use your bot. To know more use `{HNDLR}help sudo`",
         buttons=[
-            [Button.inline("Sᴜᴅᴏ Mᴏᴅᴇ  Oɴ", data="onsudo")],
-            [Button.inline("Sᴜᴅᴏ Mᴏᴅᴇ  Oғғ", data="ofsudo")],
-            [Button.inline("« Bᴀᴄᴋ", data="otvars")],
+            [Button.inline("Sudo Mode  On ✅", data="onsudo")],
+            [Button.inline("Sudo Mode  Off ❌", data="ofsudo")],
+            [Button.inline("« Back", data="otvars")],
         ],
     )
 
@@ -543,7 +543,7 @@ async def eddon(event):
     var = "SUDO"
     await setit(event, var, "True")
     await event.edit(
-        "Done! SUDO MODE has been turned on!!\n\n After Setting All Things Do Restart",
+        "SUDO MODE has been turned on!\n\nAfter setting everything, do `.restart`",
         buttons=get_back_button("sudo"),
     )
 
@@ -554,7 +554,7 @@ async def eddof(event):
     var = "SUDO"
     await setit(event, var, "False")
     await event.edit(
-        "Done! SUDO MODE has been turned off!! After Setting All Things Do Restart",
+        "SUDO MODE has been turned off!\n\nAfter setting everything, do `.restart`",
         buttons=get_back_button("sudo"),
     )
 
@@ -563,11 +563,11 @@ async def eddof(event):
 @owner
 async def sfban(event):
     await event.edit(
-        "SuperFban Settings:",
+        "FBan Settings:",
         buttons=[
-            [Button.inline("FBᴀɴ Gʀᴏᴜᴘ", data="sfgrp")],
-            [Button.inline("Exᴄʟᴜᴅᴇ Fᴇᴅs", data="sfexf")],
-            [Button.inline("« Bᴀᴄᴋ", data="otvars")],
+            [Button.inline("FBan Group 🆔", data="sfgrp")],
+            [Button.inline("Exclude Feds 🚫", data="sfexf")],
+            [Button.inline("« Back", data="otvars")],
         ],
     )
 
@@ -630,12 +630,12 @@ async def sfexf(event):
 @owner
 async def alvcs(event):
     await event.edit(
-        f"Customise your {HNDLR}alive. Choose from the below options -",
+        f"Customise your `{HNDLR}alive`. Choose from the below options -",
         buttons=[
-            [Button.inline("Aʟɪᴠᴇ Tᴇxᴛ", data="alvtx")],
-            [Button.inline("Aʟɪᴠᴇ ᴍᴇᴅɪᴀ", data="alvmed")],
-            [Button.inline("Dᴇʟᴇᴛᴇ Aʟɪᴠᴇ Mᴇᴅɪᴀ", data="delmed")],
-            [Button.inline("« Bᴀᴄᴋ", data="setter")],
+            [Button.inline("📝 Alive Text", data="alvtx")],
+            [Button.inline("🏞 Alive Media", data="alvmed")],
+            [Button.inline("❌ Delete Alive Media", data="delmed")],
+            [Button.inline("« Back", data="setter")],
         ],
     )
 
@@ -662,7 +662,7 @@ async def name(event):
         else:
             await setit(event, var, themssg)
             await conv.send_message(
-                "{} changed to {}\n\nAfter Setting All Things Do restart".format(
+                "{} changed to {}\n\nAfter setting everything, do `.restart`".format(
                     name,
                     themssg,
                 ),
@@ -735,19 +735,19 @@ async def alvcs(event):
         "Customise your PMPERMIT Settings -",
         buttons=[
             [
-                Button.inline("Pᴍ Tᴇxᴛ", data="pmtxt"),
-                Button.inline("Pᴍ Mᴇᴅɪᴀ", data="pmmed"),
+                Button.inline("🖋 PM Text", data="pmtxt"),
+                Button.inline("🌄 PM Media", data="pmmed"),
             ],
             [
-                Button.inline("Aᴜᴛᴏ Aᴘᴘʀᴏᴠᴇ", data="apauto"),
-                Button.inline("PMLOGGER", data="pml"),
+                Button.inline("✅ Auto Approve", data="apauto"),
+                Button.inline("📬 PMLOGGER", data="pml"),
             ],
             [
-                Button.inline("Sᴇᴛ Wᴀʀɴs", data="swarn"),
-                Button.inline("Dᴇʟᴇᴛᴇ Pᴍ Mᴇᴅɪᴀ", data="delpmmed"),
+                Button.inline("🧮 Set Warns", data="swarn"),
+                Button.inline("❌ Delete PM Media", data="delpmmed"),
             ],
-            [Button.inline("PMPermit Type", data="pmtype")],
-            [Button.inline("« Bᴀᴄᴋ", data="ppmset")],
+            [Button.inline("↕️ PMPermit Type", data="pmtype")],
+            [Button.inline("« Back", data="ppmset")],
         ],
     )
 
@@ -758,9 +758,9 @@ async def pmtyp(event):
     await event.edit(
         "Select the type of PMPermit needed.",
         buttons=[
-            [Button.inline("Inline", data="inpm_in")],
+            [Button.inline("Inline 🧩", data="inpm_in")],
             [Button.inline("Normal", data="inpm_no")],
-            [Button.inline("« Bᴀᴄᴋ", data="pmcstm")],
+            [Button.inline("« Back", data="pmcstm")],
         ],
     )
 
@@ -772,7 +772,7 @@ async def inl_on(event):
     await setit(event, var, "True")
     await event.edit(
         f"Done!! PMPermit type has been set to inline!",
-        buttons=[[Button.inline("« Bᴀᴄᴋ", data="pmtype")]],
+        buttons=[[Button.inline("« Back", data="pmtype")]],
     )
 
 
@@ -783,7 +783,7 @@ async def inl_on(event):
     await setit(event, var, "False")
     await event.edit(
         f"Done!! PMPermit type has been set to normal!",
-        buttons=[[Button.inline("« Bᴀᴄᴋ", data="pmtype")]],
+        buttons=[[Button.inline("« Back", data="pmtype")]],
     )
 
 
@@ -796,7 +796,7 @@ async def name(event):
     name = "PM Text"
     async with event.client.conversation(pru) as conv:
         await conv.send_message(
-            "**PM Text**\nEnter the new Pmpermit text.\n\nu can use `{name}` `{fullname}` `{count}` `{mention}` `{username}` to get this from user Too\n\nUse /cancel to terminate the operation.",
+            "**PM Text**\nEnter the new PMPermit text.\n\nYou can use `{name}` `{fullname}` `{count}` `{mention}` `{username}` to get this from user Too\n\nUse /cancel to terminate the operation.",
         )
         response = conv.wait_event(events.NewMessage(chats=pru))
         response = await response
@@ -809,12 +809,12 @@ async def name(event):
         else:
             if len(themssg) > 4090:
                 return await conv.send_message(
-                    "Message too long!\nGive a shorter message please!!",
+                    "Message too long!\nGive a shorter message please!",
                     buttons=get_back_button("pmcstm"),
                 )
             await setit(event, var, themssg)
             await conv.send_message(
-                "{} changed to {}\n\nAfter Setting All Things Do restart".format(
+                "{} changed to {}\n\nAfter setting everything, do `.restart`".format(
                     name,
                     themssg,
                 ),
@@ -828,7 +828,7 @@ async def name(event):
     m = range(1, 10)
     tultd = [Button.inline(f"{x}", data=f"wrns_{x}") for x in m]
     lst = list(zip(tultd[::3], tultd[1::3], tultd[2::3]))
-    lst.append([Button.inline("« Bᴀᴄᴋ", data="pmcstm")])
+    lst.append([Button.inline("« Back", data="pmcstm")])
     await event.edit(
         "Select the number of warnings for a user before getting blocked in PMs.",
         buttons=lst,
@@ -906,7 +906,7 @@ async def dell(event):
     except BaseException:
         return await event.edit(
             "Something went wrong...",
-            buttons=[[Button.inline("« Sᴇᴛᴛɪɴɢs", data="setter")]],
+            buttons=[[Button.inline("« Settings", data="setter")]],
         )
 
 
@@ -916,9 +916,9 @@ async def apauto(event):
     await event.edit(
         "This'll auto approve on outgoing messages",
         buttons=[
-            [Button.inline("Aᴜᴛᴏ Aᴘᴘʀᴏᴠᴇ ON", data="apon")],
-            [Button.inline("Aᴜᴛᴏ Aᴘᴘʀᴏᴠᴇ OFF", data="apof")],
-            [Button.inline("« Bᴀᴄᴋ", data="pmcstm")],
+            [Button.inline("Auto Approve ON ✅", data="apon")],
+            [Button.inline("Auto Approve OFF ❌", data="apof")],
+            [Button.inline("« Back", data="pmcstm")],
         ],
     )
 
@@ -930,7 +930,7 @@ async def apon(event):
     await setit(event, var, "True")
     await event.edit(
         f"Done!! AUTOAPPROVE  Started!!",
-        buttons=[[Button.inline("« Bᴀᴄᴋ", data="apauto")]],
+        buttons=[[Button.inline("« Back", data="apauto")]],
     )
 
 
@@ -941,12 +941,12 @@ async def apof(event):
         udB.delete("AUTOAPPROVE")
         return await event.edit(
             "Done! AUTOAPPROVE Stopped!!",
-            buttons=[[Button.inline("« Bᴀᴄᴋ", data="apauto")]],
+            buttons=[[Button.inline("« Back", data="apauto")]],
         )
     except BaseException:
         return await event.edit(
             "Something went wrong...",
-            buttons=[[Button.inline("« Sᴇᴛᴛɪɴɢs", data="setter")]],
+            buttons=[[Button.inline("« Settings", data="setter")]],
         )
 
 
@@ -958,7 +958,7 @@ async def alvcs(event):
         buttons=[
             [Button.inline("PMLOGGER ON", data="pmlog")],
             [Button.inline("PMLOGGER OFF", data="pmlogof")],
-            [Button.inline("« Bᴀᴄᴋ", data="pmcstm")],
+            [Button.inline("« Back", data="pmcstm")],
         ],
     )
 
@@ -970,7 +970,7 @@ async def pmlog(event):
     await setit(event, var, "True")
     await event.edit(
         f"Done!! PMLOGGER  Started!!",
-        buttons=[[Button.inline("« Bᴀᴄᴋ", data="pml")]],
+        buttons=[[Button.inline("« Back", data="pml")]],
     )
 
 
@@ -981,12 +981,12 @@ async def pmlogof(event):
         udB.delete("PMLOG")
         return await event.edit(
             "Done! PMLOGGER Stopped!!",
-            buttons=[[Button.inline("« Bᴀᴄᴋ", data="pml")]],
+            buttons=[[Button.inline("« Back", data="pml")]],
         )
     except BaseException:
         return await event.edit(
             "Something went wrong...",
-            buttons=[[Button.inline("« Sᴇᴛᴛɪɴɢs", data="setter")]],
+            buttons=[[Button.inline("« Settings", data="setter")]],
         )
 
 
@@ -996,10 +996,10 @@ async def pmset(event):
     await event.edit(
         "PMPermit Settings:",
         buttons=[
-            [Button.inline("Tᴜʀɴ PMPᴇʀᴍɪᴛ Oɴ", data="pmon")],
-            [Button.inline("Tᴜʀɴ PMPᴇʀᴍɪᴛ Oғғ", data="pmoff")],
-            [Button.inline("Cᴜsᴛᴏᴍɪᴢᴇ PMPᴇʀᴍɪᴛ", data="pmcstm")],
-            [Button.inline("« Bᴀᴄᴋ", data="setter")],
+            [Button.inline("Turn PMPermit On ✅", data="pmon")],
+            [Button.inline("Turn PMPermit Off ❌", data="pmoff")],
+            [Button.inline("Customize PMPermit ✏️", data="pmcstm")],
+            [Button.inline("« Back", data="setter")],
         ],
     )
 
@@ -1010,8 +1010,8 @@ async def pmonn(event):
     var = "PMSETTING"
     await setit(event, var, "True")
     await event.edit(
-        f"Done! PMPermit has been turned on!!",
-        buttons=[[Button.inline("« Bᴀᴄᴋ", data="ppmset")]],
+        f"Done! PMPermit has been turned on!",
+        buttons=[[Button.inline("« Back", data="ppmset")]],
     )
 
 
@@ -1021,8 +1021,8 @@ async def pmofff(event):
     var = "PMSETTING"
     await setit(event, var, "False")
     await event.edit(
-        f"Done! PMPermit has been turned off!!",
-        buttons=[[Button.inline("« Bᴀᴄᴋ", data="ppmset")]],
+        f"Done! PMPermit has been turned off!",
+        buttons=[[Button.inline("« Back", data="ppmset")]],
     )
 
 
@@ -1030,12 +1030,12 @@ async def pmofff(event):
 @owner
 async def chbot(event):
     await event.edit(
-        f"From This Feature U can chat with ppls Via ur Assistant Bot.\n[More info](https://t.me/UltroidUpdates/2)",
+        f"You can use your Assistant Bot to chat with people!.\n[More info](https://t.me/UltroidUpdates/2)",
         buttons=[
-            [Button.inline("Cʜᴀᴛ Bᴏᴛ  Oɴ", data="onchbot")],
-            [Button.inline("Cʜᴀᴛ Bᴏᴛ  Oғғ", data="ofchbot")],
-            [Button.inline("Bᴏᴛ Wᴇʟᴄᴏᴍᴇ", data="bwel")],
-            [Button.inline("« Bᴀᴄᴋ", data="setter")],
+            [Button.inline("Chat Bot  On ✅", data="onchbot")],
+            [Button.inline("Chat Bot  Off ❌", data="ofchbot")],
+            [Button.inline("Bot Welcome", data="bwel")],
+            [Button.inline("« Back", data="setter")],
         ],
         link_preview=False,
     )
@@ -1050,7 +1050,7 @@ async def name(event):
     name = "Bot Welcome Message:"
     async with event.client.conversation(pru) as conv:
         await conv.send_message(
-            "**BOT WELCOME MSG**\nEnter the msg which u want to show when someone start your assistant Bot.\nYou Can use `{me}` , `{mention}` Parameters Too\nUse /cancel to terminate the operation.",
+            "**BOT WELCOME MSG**\nEnter the message which you want to show when someone start your assistant Bot.\nYou Can use `{me}` , `{mention}` Parameters Too\nUse /cancel to terminate the operation.",
         )
         response = conv.wait_event(events.NewMessage(chats=pru))
         response = await response
@@ -1077,8 +1077,8 @@ async def chon(event):
     var = "PMBOT"
     await setit(event, var, "True")
     await event.edit(
-        "Done! Now u Can Chat With People Via This Bot",
-        buttons=[Button.inline("« Bᴀᴄᴋ", data="chatbot")],
+        "Done! Now you can chat with people via your bot.",
+        buttons=[Button.inline("« Back", data="chatbot")],
     )
 
 
@@ -1089,7 +1089,7 @@ async def chon(event):
     await setit(event, var, "False")
     await event.edit(
         "Done! Chat People Via This Bot Stopped.",
-        buttons=[Button.inline("« Bᴀᴄᴋ", data="chatbot")],
+        buttons=[Button.inline("« Back", data="chatbot")],
     )
 
 
@@ -1097,10 +1097,10 @@ async def chon(event):
 @owner
 async def vcb(event):
     await event.edit(
-        f"From This Feature U can play songs in group voice chat\n\n[moreinfo](https://t.me/UltroidUpdates/4)",
+        f"From this feature you can play songs on voice chat.\n\n[moreinfo](https://t.me/UltroidUpdates/4)",
         buttons=[
-            [Button.inline("VC Sᴇssɪᴏɴ", data="vcs")],
-            [Button.inline("« Bᴀᴄᴋ", data="setter")],
+            [Button.inline("VC Session", data="vcs")],
+            [Button.inline("« Back", data="setter")],
         ],
         link_preview=False,
     )
@@ -1128,7 +1128,7 @@ async def name(event):
         else:
             await setit(event, var, themssg)
             await conv.send_message(
-                "{} changed to {}\n\nAfter Setting All Things Do restart".format(
+                "{} changed to {}\n\nAfter setting everything, do `.restart`".format(
                     name,
                     themssg,
                 ),

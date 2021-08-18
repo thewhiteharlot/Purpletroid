@@ -53,7 +53,7 @@ _main_help_menu = [
         Button.inline("🔍 Inline Plugins", data="inlone"),
     ],
     [
-        Button.url("🔧 SETTINGS", url=f"https://t.me/{asst.me.username}?start=set"),
+        Button.url("🔧 Settings", url=f"https://t.me/{asst.me.username}?start=set"),
     ],
     [Button.inline("Close", data="close")],
 ]
@@ -74,7 +74,7 @@ SUP_BUTTONS = [
 async def inline_alive(o):
     if len(o.text) == 0:
         b = o.builder
-        MSG = "• **Ultroid Userbot •**"
+        MSG = "• **Violet Userbot •**"
         uptime = time_formatter((time.time() - start_time) * 1000)
         MSG += f"\n\n• **Uptime** - `{uptime}`\n"
         MSG += f"• **OWNER** - `{OWNER_NAME}`"
@@ -176,7 +176,7 @@ async def _(event):
     check = await updater()
     if not check:
         return await event.answer(
-            "You Are Already On Latest Version", cache_time=0, alert=True
+            "You're already on the latest version", cache_time=0, alert=True
         )
     repo = Repo.init()
     ac_br = repo.active_branch
@@ -191,7 +191,7 @@ async def _(event):
             get_string("upd_5"),
             file="ultroid_updates.txt",
             buttons=[
-                [Button.inline("• Uᴘᴅᴀᴛᴇ Nᴏᴡ •", data="updatenow")],
+                [Button.inline("• Update now •", data="updatenow")],
                 [Button.inline("« Back", data="ownr")],
             ],
         )
@@ -416,7 +416,7 @@ async def on_plug_in_callback_query_handler(event):
     await event.edit(
         get_string("inline_5"),
         file=_file_to_replace,
-        buttons=Button.inline("Oᴘᴇɴ Aɢᴀɪɴ", data="open"),
+        buttons=Button.inline("Open Menu ⤴️", data="open"),
     )
 
 
@@ -442,7 +442,7 @@ async def on_plug_in_callback_query_handler(event):
     buttons = [
         [
             Button.inline(
-                "Send Plugin ⏏️",
+                "Send Plugin 📤",
                 data=f"sndplug_{(event.data).decode('UTF-8')}",
             )
         ],
@@ -563,7 +563,7 @@ def page_num(page_number, loaded_plugins, prefix, type):
                     "« Previous",
                     data=f"{prefix}_prev({modulo_page})",
                 ),
-                Button.inline("« Bᴀᴄᴋ »", data="open"),
+                Button.inline("« Back »", data="open"),
                 Button.inline(
                     "Next »",
                     data=f"{prefix}_next({modulo_page})",

@@ -28,28 +28,28 @@ Owner_info_msg = f"""
 
 _settings = [
     [
-        Button.inline("API Kᴇʏs", data="apiset"),
-        Button.inline("Pᴍ Bᴏᴛ", data="chatbot"),
+        Button.inline("🔑 API Keys", data="apiset"),
+        Button.inline("🤖 PM Bot", data="chatbot"),
     ],
     [
-        Button.inline("Aʟɪᴠᴇ", data="alvcstm"),
-        Button.inline("PᴍPᴇʀᴍɪᴛ", data="ppmset"),
+        Button.inline("📌 Alive", data="alvcstm"),
+        Button.inline("🛡 PMPermit", data="ppmset"),
     ],
-    [Button.inline("Fᴇᴀᴛᴜʀᴇs", data="otvars")],
-    [Button.inline("VC Sᴏɴɢ Bᴏᴛ", data="vcb")],
-    [Button.inline("« Bᴀᴄᴋ", data="mainmenu")],
+    [Button.inline("🎛 Features", data="otvars")],
+    [Button.inline("📻 VC Song Bot", data="vcb")],
+    [Button.inline("« Back", data="mainmenu")],
 ]
 
 _start = [
     [
-        Button.inline("Lᴀɴɢᴜᴀɢᴇ 🌐", data="lang"),
-        Button.inline("Sᴇᴛᴛɪɴɢs ⚙️", data="setter"),
+        Button.inline("Language 🌐", data="lang"),
+        Button.inline("Settings ⚙️", data="setter"),
     ],
     [
-        Button.inline("Sᴛᴀᴛs ✨", data="stat"),
-        Button.inline("Bʀᴏᴀᴅᴄᴀsᴛ 📻", data="bcast"),
+        Button.inline("Stats ✨", data="stat"),
+        Button.inline("Broadcast 🎙", data="bcast"),
     ],
-    [Button.inline("TɪᴍᴇZᴏɴᴇ 🌎", data="tz")],
+    [Button.inline("TimeZone 🌎", data="tz")],
 ]
 
 
@@ -124,7 +124,7 @@ async def ultroid(event):
 @owner
 async def botstat(event):
     ok = len(get_all_users())
-    msg = """Ultroid Assistant - Stats
+    msg = """Violet Assistant - Stats
 Total Users - {}""".format(
         ok,
     )

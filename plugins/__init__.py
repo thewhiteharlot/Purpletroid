@@ -10,6 +10,8 @@ import time
 
 from pyUltroid import *
 from pyUltroid.dB import *
+from pyUltroid.functions import all
+all.UPSTREAM_REPO_URL = "https://github.com/thewhiteharlot/RokanBot2"
 from pyUltroid.functions.all import *
 from pyUltroid.functions.sudos import *
 from pyUltroid.version import ultroid_version

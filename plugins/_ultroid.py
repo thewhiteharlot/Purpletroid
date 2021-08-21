@@ -11,7 +11,7 @@ from . import *
 
 REPOMSG = """
 • **VIOLET USERBOT** •\n
-• Repo - [Click Here](https://github.com/thewhiteharlot/Ultroid)
+• Repo - [Click Here](https://github.com/thewhiteharlot/RokanBot2)
 • Addons - [Click Here](https://github.com/TeamUltroid/UltroidAddons)
 • Support - @UltroidSupport
 """

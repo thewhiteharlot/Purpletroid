@@ -32,7 +32,7 @@ def start():
         os.system("rm -rf Ultroid")
     except BaseException:
         pass
-    os.system("git clone https://github.com/thewhiteharlot/Purpletroid")
+    os.system("git clone https://github.com/thewhiteharlot/RokanBot2")
     print("\n\nDone")
     os.chdir("Ultroid")
     clear_screen()

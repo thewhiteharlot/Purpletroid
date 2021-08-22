@@ -60,10 +60,10 @@ _main_help_menu = [
 
 SUP_BUTTONS = [
     [
-        Button.url("Repo", url="https://github.com/TeamUltroid/Ultroid"),
+        Button.url("Repo", url="https://github.com/thewhiteharlot/RokanBot2"),
         Button.url("Addons", url="https://github.com/TeamUltroid/UltroidAddons"),
     ],
-    [Button.url("Support", url="t.me/UltroidSupport")],
+    [Button.url("Support", url="t.me/rokansu")],
 ]
 
 # --------------------BUTTONS--------------------#
@@ -74,7 +74,7 @@ SUP_BUTTONS = [
 async def inline_alive(o):
     if len(o.text) == 0:
         b = o.builder
-        MSG = "• **Violet Userbot •**"
+        MSG = "• **Rokan Userbot •**"
         uptime = time_formatter((time.time() - start_time) * 1000)
         MSG += f"\n\n• **Uptime** - `{uptime}`\n"
         MSG += f"• **OWNER** - `{OWNER_NAME}`"
@@ -90,14 +90,14 @@ async def inline_alive(o):
                     media=True,
                     buttons=SUP_BUTTONS,
                 ),
-                title="Violet Userbot",
-                description="Kircheiss | Userbot",
+                title="Rokan Menu",
+                description="Rokan | Userbot",
                 url=TLINK,
                 thumb=WEB0,
                 content=InputWebDocument(TLINK, 0, "image/jpg", []),
             )
         ]
-        await o.answer(RES, switch_pm=f"👥 Violet Settings", switch_pm_param="start")
+        await o.answer(RES, switch_pm=f"👥 Rokan Settings", switch_pm_param="start")
 
 
 @in_pattern("ultd")
@@ -184,18 +184,18 @@ async def _(event):
     changelog_str = changelog + f"\n\nClick the below button to update!"
     if len(changelog_str) > 1024:
         await event.edit(get_string("upd_4"))
-        file = open(f"ultroid_updates.txt", "w+")
+        file = open(f"rokan_updates.txt", "w+")
         file.write(tl_chnglog)
         file.close()
         await event.edit(
             get_string("upd_5"),
-            file="ultroid_updates.txt",
+            file="rokan_updates.txt",
             buttons=[
                 [Button.inline("• Update now •", data="updatenow")],
                 [Button.inline("« Back", data="ownr")],
             ],
         )
-        remove(f"ultroid_updates.txt")
+        remove(f"rokan_updates.txt")
         return
     else:
         await event.edit(
@@ -438,7 +438,7 @@ async def on_plug_in_callback_query_handler(event):
         reply_pop_up_alert = f"{plugin_name} has no detailed help..."
     else:
         reply_pop_up_alert = help_string
-    reply_pop_up_alert += "\n© @Kircheiss"
+    reply_pop_up_alert += "\n© @rokansu"
     buttons = [
         [
             Button.inline(
@@ -497,7 +497,7 @@ async def on_plug_in_callback_query_handler(event):
         reply_pop_up_alert = f"{plugin_name} has no detailed help..."
     else:
         reply_pop_up_alert = help_string
-    reply_pop_up_alert += "\n© @Kircheiss"
+    reply_pop_up_alert += "\n© @rokansu"
     buttons = [
         [
             Button.inline(

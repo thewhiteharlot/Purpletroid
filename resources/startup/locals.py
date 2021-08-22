@@ -26,7 +26,7 @@ def start():
     check_for_py()
 
     print(f"{a}\n\n")
-    print("Welcome to Ultroid, lets start setting up!\n\n")
+    print("Welcome to Rokan, lets start setting up!\n\n")
     print("Cloning the repository...\n\n")
     try:
         os.system("rm -rf Ultroid")
@@ -90,7 +90,7 @@ def start():
     os.system("pip3 install -r resources/extras/local-requirements.txt")
     clear_screen()
     print(a)
-    print("\nStarting Ultroid...")
+    print("\nStarting Rokan...")
     os.system("python3 -m pyUltroid")
 
 

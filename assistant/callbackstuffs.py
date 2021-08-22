@@ -160,14 +160,14 @@ async def changes(okk):
     if len(changelog_str) > 1024:
         await okk.edit(get_string("upd_4"))
         await asyncio.sleep(2)
-        with open(f"ultroid_updates.txt", "w+") as file:
+        with open(f"rokan_updates.txt", "w+") as file:
             file.write(tl_chnglog)
         await okk.edit(
             get_string("upd_5"),
-            file="ultroid_updates.txt",
+            file="rokan_updates.txt",
             buttons=Button.inline("Update Now ⏬", data="updatenow"),
         )
-        remove(f"ultroid_updates.txt")
+        remove(f"rokan_updates.txt")
         return
     else:
         await okk.edit(
@@ -316,7 +316,7 @@ async def _(e):
 @owner
 async def otvaar(event):
     await event.edit(
-        "Other Variables to set for @TheUltroid:",
+        "Other Variables to set for Rokan:",
         buttons=[
             [
                 Button.inline("📡 Tag Logger", data="taglog"),

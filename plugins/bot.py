@@ -55,11 +55,8 @@ async def lol(ult):
         header,
         OWNER_NAME,
         ultroid_version,
-        UltVer,
-        uptime,
         pyver(),
         __version__,
-        kk,
     )
     if pic is None:
         return await eor(ult, als)
